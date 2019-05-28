@@ -1,0 +1,19 @@
+{% extends "./layout.html" %}
+
+{% block title %}Add user{% endblock %}
+
+{% block content %}
+                    <form class="profile-form profile-services" action="/add-user" autocomplete="off" method="POST">
+                        <div class="profile-form-group">
+                            <label for="InputAmount">first name</label>
+                            <input type="text" name="firstName" id="firstName" placeholder="Enter first name...">
+                        </div>
+                        <div class="profile-form-group">
+                            <label for="Input">last name</label>
+                            <input type="text" name="lastName" id="lastName" placeholder="Enter last name...">
+                        </div>
+                        <div class="profile-form-group submit">
+                            <button type="submit">Create</button>
+                        </div>
+                    </form>
+{% endblock %}

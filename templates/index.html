@@ -1,0 +1,34 @@
+{% extends "./layout.html" %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+    <div class="profile-wrapper">
+
+                    <div class="profile-content-title"><span>Users list</span></div>
+                    <table class="profile-table">
+                        <tr class="profile-table-header">
+                            <th>ID</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Balance</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        {% for user in users_list %}
+                            <tr class="profile-table-row">
+                                <td>{{ user.user_id }}</td>
+                                <td>{{ user.first_name }}</td>
+                                <td>{{ user.last_name }}</td>
+                                <td>{{ user.money }}</td>
+                                <td>&nbsp;&nbsp;<a href="/remove-user/{{ user.user_id }}">X</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td><a href="/edit-user/{{ user.user_id }}">Edit</a></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+{% endblock %}
+
+
+
